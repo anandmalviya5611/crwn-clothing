@@ -17,7 +17,7 @@ const defaultformFields = {
 const SignUpForm = () => {
     const [formFields, setFormFields] = useState(defaultformFields);
     const {displayName, email, password, confirmPassword } = formFields;
-    console.log(formFields);
+   
 
     const resetFormFields = () => {
         setFormFields(defaultformFields);
@@ -36,12 +36,13 @@ const SignUpForm = () => {
             resetFormFields();
 
         }catch(error){
-            if(error.code = 'auth/email-already-in-use'){
-                alert('cannot create user, email already in use');
-            }
-            else{
-            console.log('user creation encountered an error',error);
-            }
+            console.log(error);
+            // if(error.code = 'auth/email-already-in-use'){
+            //     alert('cannot create user, email already in use');
+            // }
+            // else{
+            // console.log('user creation encountered an error',error);
+            // }
         }
     }
 
@@ -58,10 +59,11 @@ const SignUpForm = () => {
             <FormInput label='Email' type="email" required onChange={handleChange} name='email' value={email}/>
             <FormInput label='Password' type="password" required onChange={handleChange} name='password' value={password}/>
             <FormInput label='Confirm Password' type="password" required onChange={handleChange} name='confirmPassword' value={confirmPassword}/>
-            <Button buttonType='google' type="submit">
+            <Button type="submit">
                 Submit
             </Button>
         </form>
+        
     </div>
  )   
 }

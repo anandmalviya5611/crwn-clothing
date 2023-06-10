@@ -13,7 +13,7 @@ return(
             <Link className='nav-link' to=''>
                 <div>SHOP</div>
             </Link>
-            <Link className='nav-link' to='/sign-in'>
+            <Link className='nav-link' to='/authentication'>
                 <div>SIGN IN</div>
             </Link>
             </div>
